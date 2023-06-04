@@ -1,0 +1,1 @@
+const texto = document.querySelector('p').innerHTML = 'Winter is coming'
