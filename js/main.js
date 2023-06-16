@@ -1,5 +1,5 @@
 const controle = document.querySelectorAll("[data-controle]")
-const estatisticas = document.querySelectorAll("[data-estatistica]")
+const estatistica = document.querySelectorAll("[data-estatistica]")
 const pecas = {
     "bracos": {
         "forca": 29,
@@ -7,7 +7,6 @@ const pecas = {
         "energia": -21,
         "velocidade": -5
     },
-
     "blindagem": {
         "forca": 41,
         "poder": 20,
@@ -18,13 +17,13 @@ const pecas = {
         "forca": 0,
         "poder": 7,
         "energia": 48,
-        "velocidade": -24
+        "velocidade": -4
     },
     "pernas": {
         "forca": 27,
         "poder": 21,
         "energia": -32,
-        "velocidade": 42
+        "velocidade": 43
     },
     "foguetes": {
         "forca": 0,
@@ -34,30 +33,28 @@ const pecas = {
     }
 }
 
-controle.forEach((elemento) => {
+controle.forEach( (elemento) => {
     elemento.addEventListener("click", (evento) => {
-        manipulaDados(evento.target.dataset.controle, evento.target.parentNode) //a função manipula dados espera um texto (textContent) chamando + ou -
-
+        manipulaDados(evento.target.dataset.controleajuste, evento.target.parentNode) 
         atualizaEstatisticas(evento.target.dataset.peca)
     })
 })
 
 function manipulaDados(operacao, controle) {
-    const peca = controle.querySelector("[data-contador]") //o query selector irá pegar as informações apenas do elemento 'controle' ao envés de pegar no document inteiro
-    const valorAtual = parseInt(peca.value)
+    const peca = controle.querySelector("[data-contador]")
 
-    if (operacao === "-") {
-        peca.value = valorAtual - 1
+    if(operacao === "-") {
+        peca.value = parseInt(peca.value) - 1
+    }else if (operacao == "+") {
+        peca.value = parseInt(peca.value) + 1
     }
-    else {
-        peca.value = valorAtual + 1
-    }
+
 }
 
 function atualizaEstatisticas(peca) {
 
-    estatisticas.forEach( (elemento) => {
-       //console.log(elemento.dataset.estatistica)
-       elemento.textContent = parseInt(elemento.textContent) + pecas[peca][elemento.dataset.estatistica]
-    })
+        estatistica.forEach( (elemento) => {
+          elemento.textContent = parseInt(elemento.textContent) + pecas[peca][elemento.dataset.estatistica]
+        })
 }
+
