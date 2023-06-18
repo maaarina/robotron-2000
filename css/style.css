@@ -208,6 +208,20 @@ main {
     margin: 10px 0 0;
 }
 
+/******************************* Alterar robô ******/
+
+.alterar {
+    margin: 2px;
+    width: 200px;
+}
+
+.botoes {
+   position: relative;
+   right: 5%;
+   bottom: 10%;
+   display: flex;
+}
+
 @media screen and (max-width: 1600px) {
     body { 
         font-size: 14px;
