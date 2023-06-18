@@ -33,9 +33,9 @@ const pecas = {
     }
 }
 
-controle.forEach( (elemento) => {
+controle.forEach((elemento) => {
     elemento.addEventListener("click", (evento) => {
-        manipulaDados(evento.target.dataset.controleajuste, evento.target.parentNode) 
+        manipulaDados(evento.target.dataset.textContent, evento.target.parentNode)
         atualizaEstatisticas(evento.target.dataset.peca)
     })
 })
@@ -43,18 +43,23 @@ controle.forEach( (elemento) => {
 function manipulaDados(operacao, controle) {
     const peca = controle.querySelector("[data-contador]")
 
-    if(operacao === "-") {
+    if (operacao === "-") {
         peca.value = parseInt(peca.value) - 1
-    }else if (operacao == "+") {
+    } else{
         peca.value = parseInt(peca.value) + 1
     }
 
 }
 
 function atualizaEstatisticas(peca) {
+    console.log(peca)
 
-        estatistica.forEach( (elemento) => {
-          elemento.textContent = parseInt(elemento.textContent) + pecas[peca][elemento.dataset.estatistica]
-        })
+    estatistica.forEach((elemento) => {
+        elemento.textContent = parseInt(elemento.textContent) + pecas[peca][elemento.dataset.estatistica]
+    })
 }
 
+function trocaImagem(cor){
+    document.querySelector(".robo").src="img/Robotron 2000 - " + cor + ".png";
+ }
+ 
