@@ -45,7 +45,7 @@ function manipulaDados(operacao, controle) {
 
     if (operacao === "-") {
         peca.value = parseInt(peca.value) - 1
-    } else{
+    } else {
         peca.value = parseInt(peca.value) + 1
     }
 
@@ -57,7 +57,20 @@ function atualizaEstatisticas(peca) {
     })
 }
 
-function trocaImagem(cor){
-    document.querySelector(".robo").src="img/Robotron 2000 - " + cor + ".png";
- }
- 
+const botoesCor = document.querySelectorAll('.btn-cor');
+const robo = document.querySelector('.robo');
+
+botoesCor.forEach((botao) => {
+    botao.addEventListener("click", () => {
+
+        console.log('aplicando a cor ' + botao.dataset.cor + ' no Robotron 2000!');
+
+        robo.src = `/img/robotron-${botao.dataset.cor}.png`; //CORRIGIR:  o arquivo não foi encontrado no caminho esperado. 
+        botao.classList.add('btn-ativo');
+
+        botoesCor.forEach((btn) => {
+            if (btn.dataset.cor != botao.dataset.cor)
+                btn.classList.remove('btn-ativo');
+        });
+    });
+});
