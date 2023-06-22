@@ -109,17 +109,17 @@
         </section>
     </main>
 
-    <section class="robotron">
-        <section class="botoes">
-            <button class="alterar" alterar onclick="trocaImagem('Azul')">Robotron Azul</button>
-            <button class="alterar" alterar onclick="trocaImagem('Amarelo')">Robotron Amarelo</button>
-            <button class="alterar" alterar onclick="trocaImagem('Branco')">Robotron Branco</button>
-            <button class="alterar" alterar onclick="trocaImagem('Preto')">Robotron Preto</button>
-            <button class="alterar" alterar onclick="trocaImagem('Rosa')">Robotron Rosa</button>
-            <button class="alterar" alterar onclick="trocaImagem('Vermelho')">Robotron Vermelho</button>
-        </section>
+    <div class="container__btn-cor">
+        <span class="titulo-cor">Escolha uma cor</span>
+        <button class="btn-cor btn-ativo" data-cor="azul"></button>
+        <button class="btn-cor" data-cor="amarelo"></button>
+        <button class="btn-cor" data-cor="branco"></button>
+        <button class="btn-cor" data-cor="preto"></button>
+        <button class="btn-cor" data-cor="rosa"></button>
+        <button class="btn-cor" data-cor="vermelho"></button>
+    </div>
 
-        <img class="robo" src="/img/Robotron 2000 - Azul.png" alt="Robotron">  
+    <img class="robo" src="/img/Robotron 2000 - Azul.png" alt="Robotron">  
 
 <script src="js/main.js"></script>
 </body>
