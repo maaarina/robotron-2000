@@ -17,7 +17,8 @@ body {
     font-weight: 300;
 }
 
-body, input {
+body,
+input {
     font-family: 'Teko', sans-serif;
 }
 
@@ -58,7 +59,7 @@ main {
 }
 
 .box {
-    background: rgba(0,0,0,0.6);
+    background: rgba(0, 0, 0, 0.6);
     clip-path: polygon(calc(100% - 30px) 0, 100% 30px, 100% calc(100% - 30px), calc(100% - 30px) 100%, 30px 100%, 0 calc(100% - 30px), 0 30px, 30px 0);
     border-left: 5px solid var(--main-cinza);
     height: 80%;
@@ -210,22 +211,89 @@ main {
 
 /******************************* Alterar robô ******/
 
-.alterar {
-    margin: 2px;
-    width: 200px;
+.container__btn-cor {
+    background-color: black;
+
+    position: relative;
+
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+
+    z-index: 2;
+
+    border-radius: 100px;
+
+    padding: 0.5rem;
+    max-width: 57rem;
 }
 
-.botoes {
-   position: relative;
-   right: 5%;
-   bottom: 10%;
-   display: flex;
+.titulo-cor {
+    font-size: 2rem;
+    text-transform: uppercase;
+
+    color: white;
 }
+
+.btn-cor {
+    border: 3px solid #ffffff;
+
+    border-radius: 50%;
+    aspect-ratio: 1/1;
+
+    cursor: pointer;
+
+    width: 40px;
+
+    transition: transform 0.5s;
+}
+
+.btn-cor:hover {
+    transform: scale(135%);
+
+    transition: transform 0.3s;
+}
+
+.btn-cor:active {
+    transform: scale(70%);
+}
+
+.btn-ativo {
+    transform: scale(180%);
+    border-width: 2px;
+}
+
+[data-cor="azul"] {
+    background-color: rgb(70, 109, 182);
+}
+
+[data-cor="amarelo"] {
+    background-color: rgb(255, 255, 0);
+}
+
+[data-cor="branco"] {
+    background-color: rgb(255, 255, 255);
+}
+
+[data-cor="preto"] {
+    background-color: rgb(44, 44, 44);
+}
+
+[data-cor="rosa"] {
+    background-color: rgb(229, 135, 173);
+}
+
+[data-cor="vermelho"] {
+    background-color: rgb(240, 0, 0);
+}
+
+/*====================================*/
 
 @media screen and (max-width: 1600px) {
-    body { 
+    body {
         font-size: 14px;
     }
+
     main {
         width: 90vw;
         height: 80vh;
@@ -234,7 +302,7 @@ main {
 }
 
 @media screen and (max-width: 1200px) {
-    body { 
+    body {
         font-size: 13px;
     }
 
