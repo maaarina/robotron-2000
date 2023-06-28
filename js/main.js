@@ -63,14 +63,14 @@ const robo = document.querySelector('.robo');
 botoesCor.forEach((botao) => {
     botao.addEventListener("click", () => {
 
-        console.log('aplicando a cor ' + botao.dataset.cor + ' no Robotron 2000!');
+        /*console.log('aplicando a cor ' + botao.dataset.cor + ' no Robotron 2000!');
 
-        robo.src = `/img/robotron-${botao.dataset.cor}.png`; //CORRIGIR:  o arquivo não foi encontrado no caminho esperado. 
-        botao.classList.add('btn-ativo');
+        robo.src = `/img/robotron-${botao.dataset.cor}.png`; //CORRIGIR:  o arquivo não foi encontrado no caminho esperado. */
+        botao.classList.add('btn-ativo'); 
 
         botoesCor.forEach((btn) => {
             if (btn.dataset.cor != botao.dataset.cor)
                 btn.classList.remove('btn-ativo');
         });
     });
-});
+}); 
